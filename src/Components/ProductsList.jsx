@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductsList = ({products}) => {
-    const allProducts = products.data;
+    const allProducts = products;
     console.log(products);
     return (
         <div className='mt-12 grid gap-y-8'>

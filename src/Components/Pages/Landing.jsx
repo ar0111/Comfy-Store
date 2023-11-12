@@ -5,7 +5,7 @@ import FeaturedProducts from '../FeaturedProducts';
 
 const Landing = () => {
     const products = useLoaderData();
-    // console.log(products);
+    console.log(products);
 
     return <div className='container mx-auto'>
         <Hero></Hero>

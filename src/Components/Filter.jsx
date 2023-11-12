@@ -6,7 +6,33 @@ import FormRange from './FormRange';
 import FormCheckbox from './FormCheckbox';
 
 const Filter = ({products}) => {
-    const meta = products.meta;
+    const Products = {
+        "meta": {
+            "pagination": {
+                "page": 1,
+                "pageSize": 10,
+                "pageCount": 3,
+                "total": 22
+            },
+            "categories": [
+                "all",
+                "Tables",
+                "Chairs",
+                "Kids",
+                "Sofas",
+                "Beds"
+            ],
+            "companies": [
+                "all",
+                "Modenza",
+                "Luxora",
+                "Artifex",
+                "Comfora",
+                "Homestead"
+            ]
+        }
+    }
+    const meta = Products.meta;;
 
     return <Form className='bg-base-200 rounded-md px-8 py-4 grid gap-x-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center'>
         <FormInput type='search' label='search product' name='search' size='input-sm'></FormInput>

@@ -6,10 +6,12 @@ import CartTotals from '../CartTotals';
 import { AuthContext } from '../Context/UserContext';
 import { redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { TabTitle } from '../FunctionTitles';
 
 const Checkout = () => {
     TabTitle("Comfy | Checkout")
     const {user} = useContext(AuthContext);
+
     if(!user){
         toast.warn("You must be logged in to checkout");
         return redirect('/login');

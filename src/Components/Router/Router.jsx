@@ -5,12 +5,13 @@ import SingleProduct from "../Pages/SingleProduct";
 import Cart from "../Pages/Cart";
 import About from "../Pages/About";
 import Checkout from "../Pages/Checkout";
-import Orders from "../Pages/Orders";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Error from "../Pages/Error";
 import Landing from "../Pages/Landing";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Order from "../Order/Order";
+import Update from "../Pages/Update";
 
 const router = createBrowserRouter([
     {
@@ -20,26 +21,30 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Landing></Landing>,
-                loader: ()=>fetch('https://strapi-store-server.onrender.com/api/products?featured=true')
+                loader: ()=>fetch('https://comfy-server-lweo6mwlf-arafat-rahmans-projects.vercel.app/services')
             },
             {
                 path:'/home', 
                 element:<Landing></Landing>,
-                loader: ()=>fetch('https://strapi-store-server.onrender.com/api/products?featured=true')
+                loader: ()=>fetch('https://comfy-server-lweo6mwlf-arafat-rahmans-projects.vercel.app/services')
             },
             {
                 path:'/products', 
                 element:<Products></Products>,
-                loader: ()=>fetch('https://strapi-store-server.onrender.com/api/products')
+                loader: ()=>fetch('https://comfy-server-lweo6mwlf-arafat-rahmans-projects.vercel.app/services')
             },
             {
                 path:'/products/:id', 
                 element:<SingleProduct></SingleProduct>,
-                loader: ({params})=>fetch(`https://strapi-store-server.onrender.com/api/products/${params.id}`)
+                loader: ({params})=>fetch(`https://comfy-server-lweo6mwlf-arafat-rahmans-projects.vercel.app/services/${params.id}`)
             },
             {
                 path:'/cart', 
                 element:<Cart></Cart>
+            },
+            {
+                path:'/orders', 
+                element:<Order></Order>
             },
             {
                 path:'/about', 
@@ -48,6 +53,11 @@ const router = createBrowserRouter([
             {
                 path:'/checkout', 
                 element:<PrivateRoute><Checkout></Checkout></PrivateRoute>
+            },
+            {
+                path:'/orders/update/:id', 
+                element:<Update></Update>,
+                loader: ({params})=>fetch(`https://comfy-server-lweo6mwlf-arafat-rahmans-projects.vercel.app/orders/${params.id}`)
             },
             {
                 path:'*', 

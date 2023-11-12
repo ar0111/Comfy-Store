@@ -16,7 +16,7 @@ const generateAmountOptions = (number) => {
   };
 
 const SingleProduct = () => {
-    const product = useLoaderData().data;
+    const product = useLoaderData();
     console.log(product);
     const {image, title, price, description, colors, company} = product.attributes;
     const [productColor, setProductColor] = useState(colors[0]);
@@ -29,8 +29,8 @@ const SingleProduct = () => {
     const dispatch = useDispatch();
 
     const cartProduct = {
-        cartID: product.id + productColor,
-        productID: product.id,
+        cartID: product._id + productColor,
+        productID: product._id,
         image,
         title,
         price,

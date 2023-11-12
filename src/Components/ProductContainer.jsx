@@ -4,8 +4,9 @@ import ProductsList from './ProductsList';
 import { BsFillGridFill, BsList } from 'react-icons/bs';
 
 const ProductContainer = ({products}) => {
-    const meta = products.meta;
-    const totalProducts = meta.pagination.total;
+    // const meta = products[0].meta;
+    // console.log(products[0].meta.pagination.total);
+    const totalProducts = 22;
 
     const [layout, setLayout] = useState('grid');
 
